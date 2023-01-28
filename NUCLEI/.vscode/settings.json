@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "nuclei.h": "c",
+        "specific.h": "c",
+        "general.h": "c"
+    }
+}

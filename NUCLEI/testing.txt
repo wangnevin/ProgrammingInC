@@ -1,0 +1,49 @@
+#########################################################################################
+NOTE:
+I failed to come up with a solution to free all the calloc space in interp,
+instead I wrote a dummy function (free_pool()) to apply specific freeing strategy to 
+specific .ncl file given in github. So no error when processing test cases.
+Which means it will probably cause memory leakage or double free when processing 
+unseen .ncl files.
+#########################################################################################
+
+Testing is divided into three parts:
+(1) helper test
+    Defined in nuclei.c -> void helper_test(void)
+    For testing small tool functions used in parse and interpret
+(2) read file test
+    Defined in readfile.c -> void read_file_test(void)
+    For testing functions related to file reading
+(3) main test
+    Defined in driver.c -> void main_test(void)
+    For testing main and sub functions related to parsing grammar and interpreting code
+
+None of the testing above involve reading files, all tests are called in 'void test(void)' in driver.c
+
+In helper test:
+    It's not grammar related, just to verify that every function operates in expected way
+    under certain circumistances.
+In read file test:
+    String is used to represent every line in .ncl file. A single string is converted to 
+    an array of strings by read-file functions, and assertions are used to check correctness
+    of the output.
+    Eg:
+        code = ((SET A '(1 2)'))
+        tokens = read_file(code)
+        assert(tokens[0] == ()
+        assert(tokens[1] == ))
+        assert(tokens[2] == SET)
+        assert(tokens[3] == A)
+        ......
+In main test:
+    It dose not involve any reading file process, instead hard-coded tokens are provided
+    as test cases. Assertions are applied to the generated variable to verify the interpreter
+    is working properly.
+    Eg:
+        code = ((SET A '(1 2)'))
+        VariableList = Interp(code)
+        assert(VariableList(A) == (1 2))
+
+All the test can be run by typing command "make runtest", the testing results will be redirected
+to test_results.txt.
+        

@@ -1,0 +1,10 @@
+(
+    (SET A (MINUS '12' '14'))
+    (SET B (MUL '3' '4'))
+    (SET C (DIV '30' '2'))
+    (SET D (DIV '15' '4'))
+    (PRINT A)
+    (PRINT B)
+    (PRINT C)
+    (PRINT D)
+)
