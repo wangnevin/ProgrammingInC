@@ -1,13 +1,5 @@
 #include "lisp.h"
 
-/*
-I failed to come up with a solution to free all the calloc space in interp,
-instead I wrote a dummy function (free_pool()) to apply specific strategy of freeing to 
-specific .ncl file given in github. So no error when processing test cases.
-Which means it will probably cause memory leakage or double free when processing 
-unseen .ncl files.
-*/
-
 #define MAXNUMTOKENS 500
 #define MAXTOKENSIZE 100
 #define ALPHANUM 26
