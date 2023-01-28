@@ -1,12 +1,3 @@
-#########################################################################################
-NOTE:
-I failed to come up with a solution to free all the calloc space in interp,
-instead I wrote a dummy function (free_pool()) to apply specific freeing strategy to 
-specific .ncl file given in github. So no error when processing test cases.
-Which means it will probably cause memory leakage or double free when processing 
-unseen .ncl files.
-#########################################################################################
-
 Testing is divided into three parts:
 (1) helper test
     Defined in nuclei.c -> void helper_test(void)
