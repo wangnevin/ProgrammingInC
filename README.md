@@ -6,6 +6,19 @@ Here, I developed a means to parse and interpret the instructions for a simple l
 
 The Formal Grammar for this language can be found here: [Grammar](./grammar.txt)
 
+## Run the program
+
+The suffix of the source code file name is ```.ncl```
+- To parse a source code
+  1. In comman line, type ```make parse```
+  2. If the name for the source code file is ```code.ncl```, then type ```parse code.ncl```
+  3. If the output is ```Parsed OK```, then there is no syntax errors in the code. Otherwise an error message will be shown.
+- To intepret a source code
+  1. In command line, type ```make interp```
+  2. If the name for the source code file is ```code.ncl```, then type ```interp code.ncl```
+  3. The result of executing the code will be shown.
+- To clear all the built files, type ```make clean```
+
 ## Examples
 For the following code:
 ```
