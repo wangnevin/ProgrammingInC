@@ -1,7 +1,0 @@
-I extened the grammar, so now it can perform minus, multiply and integer division operations.
-
-The extened grammar is below: 
-
-<INTFUNC>  ::= "PLUS" <LIST> <LIST> | "MINUS" <LIST> <LIST> | 
-               "MUL" <LIST> <LIST> | "DIV" <LIST> <LIST> | 
-               "LENGTH" <LIST>
