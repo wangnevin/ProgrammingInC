@@ -10,7 +10,9 @@
 
 <LISTFUNC> ::= "CAR" <LIST> | "CDR" <LIST> | "CONS" <LIST> <LIST>
 
-<INTFUNC> ::= "PLUS" <LIST> <LIST> | "LENGTH" <LIST>
+<INTFUNC>  ::= "PLUS" <LIST> <LIST> | "MINUS" <LIST> <LIST> | 
+               "MUL" <LIST> <LIST> | "DIV" <LIST> <LIST> | 
+               "LENGTH" <LIST>
 
 <BOOLFUNC> ::= "LESS" <LIST> <LIST> | "GREATER" <LIST> <LIST> | "EQUAL" <LIST> <LIST>
 
